@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9f7f9;
+            border-radius: 4px;
+            border: 1px solid #c7e1e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Speech Translator</h1>
+        <form id="translateForm">
+            <label for="query">Enter Sentence:</label>
+            <input type="text" id="query" name="query" placeholder="Enter text to translate" required>
+
+            <label for="to_lang">Select Language:</label>
+            <select id="to_lang" name="to_lang">
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+
+            <button type="submit">Translate</button>
+        </form>
+
+        <div class="result" id="result" style="display: none;">
+            <h2>Result</h2>
+            <p><strong>Original Text:</strong> <span id="originalText"></span></p>
+            <p><strong>Detected Language:</strong> <span id="fromLang"></span></p>
+            <p><strong>Translated Text:</strong> <span id="translatedText"></span></p>
+            <audio id="audio" controls>
+                <source id="audioSource" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('translateForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/translate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    // Display the result
+                    document.getElementById('originalText').textContent = data.original_text;
+                    document.getElementById('fromLang').textContent = data.from_lang;
+                    document.getElementById('translatedText').textContent = data.translated_text;
+
+                    // Play the translated audio
+                    const audioElement = document.getElementById('audio');
+                    const audioSource = document.getElementById('audioSource');
+                    audioSource.src = `/static/${data.audio_file}`;
+                    audioElement.load();
+                    audioElement.play();
+
+                    // Show the result
+                    document.getElementById('result').style.display = 'block';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

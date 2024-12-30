@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Language Learning Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a237e, #311b92);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFC107, #FF5722);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        .boxes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            transform: rotate(-5deg);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box:hover {
+            transform: rotate(0deg) translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+        }
+
+        .box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .box-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .box.auto-rickshaw { background: linear-gradient(45deg, #FF9800, #F57C00); }
+        .box.bus-stand { background: linear-gradient(45deg, #2196F3, #1976D2); }
+        .box.mall { background: linear-gradient(45deg, #9C27B0, #7B1FA2); }
+        .box.restaurant { background: linear-gradient(45deg, #4CAF50, #388E3C); }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 40px;
+            background: linear-gradient(45deg, #FF5722, #F4511E);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover::after {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .description { font-size: 1rem; }
+            .boxes-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>తెలుగు భాషకు స్వాగతం</h1>
+            <p class="description">తెలుగు మాట్లాడే సామాన్యమైన మాటల్ని మా ఇంటరాక్టివ్ లెర్నింగ్ మాడ్యూల్స్ ద్వారా నేర్చుకోండి.</p>
+        </div>
+
+        <div class="boxes-container">
+            <div class="box auto-rickshaw" onclick="window.location.href='rickshaw_te.html';">
+                <div class="box-icon">🛺</div>
+                <div class="box-title">ఆటో రిక్షా</div>
+                <p>ఆటో రిక్షా ప్రయాణంలో వాడే సాధారణ పదాలు నేర్చుకోండి</p>
+            </div>
+            
+            <div class="box bus-stand" onclick="window.location.href='bus_te.html';">
+                <div class="box-icon">🚌</div>
+                <div class="box-title">బస్ స్టాండ్</div>
+                <p>బస్ ప్రయాణానికి అవసరమైన పదజాలం</p>
+            </div>
+            
+            <div class="box mall" onclick="window.location.href='mall_te.html';">
+                <div class="box-icon">🏬</div>
+                <div class="box-title">షాపింగ్ మాల్</div>
+                <p>షాపింగ్ సంభాషణలు మరియు ఉపయోగకరమైన పదాలు</p>
+            </div>
+            
+            <div class="box restaurant" onclick="window.location.href='restaurant_te.html';">
+                <div class="box-icon">🍽️</div>
+                <div class="box-title">రెస్టారెంట్</div>
+                <p>రెస్టారెంట్ పదజాలం మరియు ఆర్డరింగ్ ఫుడ్</p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="window.history.back()" class="back-button">← వెనక్కి వెళ్ళండి</button>
+        </div>
+    </div>
+</body>
+</html>

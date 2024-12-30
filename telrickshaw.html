@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation in Auto-Rickshaw</title>
+    <link rel="stylesheet" href="telrickshaw.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conversation in Auto-Rickshaw</h1>
+        <div class="form-container">
+            <label for="sentence">Enter Sentence:</label>
+            <input type="text" id="sentence" placeholder="Enter sentence">
+            <label for="meaning">Enter Meaning:</label>
+            <input type="text" id="meaning" placeholder="Enter meaning">
+            <button id="addBtn">Add</button>
+        </div>
+
+        <div class="conversation-box">
+            <h2>Common Conversations in Auto-Rickshaw:</h2>
+            <ul id="conversation-list">
+                <li><span class="sentence">Idi Pune ki vellutunda?</span> - <span class="meaning">Will it go to Pune?</span></li>
+                <li><span class="sentence">Station ki velladaniki entha paduthundi?</span> - <span class="meaning">How much to go to the station?</span></li>
+                <li><span class="sentence">Meeru market ki veltunnara?</span> - <span class="meaning">Are you going to the market?</span></li>
+                <li><span class="sentence">Nannu MG Road ki theesukellandi.</span> - <span class="meaning">Take me to MG Road.</span></li>
+                <li><span class="sentence">Ikada nunchi entha dooram undi?</span> - <span class="meaning">How far is it from here?</span></li>
+                <li><span class="sentence">Mee daggara 500 ki chillar unda?</span> - <span class="meaning">Do you have change for 500?</span></li>
+                <li><span class="sentence">Nenu mundu kurchocha?</span> - <span class="meaning">Can I sit in the front?</span></li>
+                <li><span class="sentence">Airport ki velladaniki entha avutundi?</span> - <span class="meaning">How much to go to the airport?</span></li>
+                <li><span class="sentence">Signal daggara aapandi.</span> - <span class="meaning">Stop at the signal.</span></li>
+                <li><span class="sentence">Nenu ikada digutanu.</span> - <span class="meaning">I’ll get off here.</span></li>
+                <li><span class="sentence">Meeru metro station ki theesukellutara?</span> - <span class="meaning">Can you take me to the metro station?</span></li>
+                <li><span class="sentence">Meeru ikkada vethirinchutara?</span> - <span class="meaning">Will you wait for me here?</span></li>
+                <li><span class="sentence">Ee dari lo veltunnara?</span> - <span class="meaning">Are you going this way?</span></li>
+                <li><span class="sentence">Akkada cheradaniki entha time paduthundi?</span> - <span class="meaning">How long will it take to reach?</span></li>
+                <li><span class="sentence">Konchem tondaraga vellagalara?</span> - <span class="meaning">Can you go a bit faster?</span></li>
+                <li><span class="sentence">Daggarlo unna hospital ekkada undi?</span> - <span class="meaning">Where is the nearest hospital?</span></li>
+                <li><span class="sentence">Nenu bus stand ki vellali.</span> - <span class="meaning">I want to go to the bus stand.</span></li>
+                <li><span class="sentence">Next corner daggara aapandi.</span> - <span class="meaning">Can you stop at the next corner?</span></li>
+                <li><span class="sentence">Airport ki velladaniki entha charge chestaru?</span> - <span class="meaning">How much will you charge to go to the airport?</span></li>
+                <li><span class="sentence">Nenu card tho payment chestanu.</span> - <span class="meaning">I’ll pay by card.</span></li>
+                <li><span class="sentence">ATM ki theesukellutara?</span> - <span class="meaning">Can you take me to the nearest ATM?</span></li>
+                <li><span class="sentence">Ee dari correcta?</span> - <span class="meaning">Is this the right way to go?</span></li>
+                <li><span class="sentence">Main road lo vellandi.</span> - <span class="meaning">Please go through the main road.</span></li>
+                <li><span class="sentence">Daggarlo unna mall ekkada undi?</span> - <span class="meaning">Where is the nearest mall?</span></li>
+                <li><span class="sentence">Round trip ki entha paduthundi?</span> - <span class="meaning">How much for a round trip?</span></li>
+                <li><span class="sentence">Rathri prayanam suraksha unda?</span> - <span class="meaning">Is it safe to travel at night?</span></li>
+                <li><span class="sentence">Nenu rush lo unnanu, tondaraga vellandi.</span> - <span class="meaning">I’m in a hurry, can you go faster?</span></li>
+                <li><span class="sentence">Nannu gate degara kinda theesukellandi.</span> - <span class="meaning">Can you drop me at the gate?</span></li>
+                <li><span class="sentence">Okkarike entha charge chestaru?</span> - <span class="meaning">How much for one person?</span></li>
+                <li><span class="sentence">Mee daggara mobile charger unda?</span> - <span class="meaning">Do you have a mobile charger?</span></li>
+                <li><span class="sentence">Daggarlo unna restaurant ki entha dooram undi?</span> - <span class="meaning">How far is the nearest restaurant?</span></li>
+                <li><span class="sentence">Airport ki tondaraga cheralanu.</span> - <span class="meaning">I need to reach the airport quickly.</span></li>
+                <li><span class="sentence">Ikada aapandi.</span> - <span class="meaning">Can you stop here?</span></li>
+                <li><span class="sentence">Long trip ki available unnara?</span> - <span class="meaning">Are you available for a long trip?</span></li>
+                <li><span class="sentence">Konchem cheaper chesthara?</span> - <span class="meaning">Can you make it cheaper?</span></li>
+                <li><span class="sentence">Nenu na pet tho velagalana?</span> - <span class="meaning">Can I bring my pet along?</span></li>
+                <li><span class="sentence">Next stop lo digali.</span> - <span class="meaning">I need to get off at the next stop.</span></li>
+                <li><span class="sentence">Daya chesi ikkada naku wait chesthara?</span> - <span class="meaning">Please wait for me here.</span></li>
+                <li><span class="sentence">Meeru ela time ki start chestaru?</span> - <span class="meaning">What time do you start work?</span></li>
+                <li><span class="sentence">Meeru station ki veltunnara?</span> - <span class="meaning">Do you go to the station?</span></li>
+                <li><span class="sentence">Veri route lo veltara?</span> - <span class="meaning">Can you take a different route?</span></li>
+                <li><span class="sentence">Back seat lo enni mandi vachu?</span> - <span class="meaning">How many people can sit in the back?</span></li>
+                <li><span class="sentence">Driver tho kurchocha?</span> - <span class="meaning">Can I sit with the driver?</span></li>
+                <li><span class="sentence">Nearest hospital ki theesukellutara?</span> - <span class="meaning">Can you take me to the nearest hospital?</span></li>
+                <li><span class="sentence">Idi shortest route aa?</span> - <span class="meaning">Is this the shortest route?</span></li>
+                <li><span class="sentence">Meeru market ki veltunnara?</span> - <span class="meaning">Are you going to the market?</span></li>
+                <li><span class="sentence">Konchem kiraya thaggistara?</span> - <span class="meaning">Can you reduce the fare a little?</span></li>
+                <li><span class="sentence">Mee daggara chillar unda?</span> - <span class="meaning">Do you have change?</span></li>
+                <li><span class="sentence">Meeru shortest route tho vellutunnara?</span> - <span class="meaning">Are you taking the shorter route?</span></li>
+                <li><span class="sentence">Meeru ekkada nunchi vacharu?</span> - <span class="meaning">Where are you from?</span></li>
+            </ul>
+        </div>
+    </div>
+    <button onclick="window.location.href='page5.html';" class="back-button">Back</button>
+
+    <script src="telrickshaw.js"></script>
+</body>
+</html>
